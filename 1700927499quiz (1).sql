@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 25, 2023 at 03:51 PM
+-- Generation Time: Nov 27, 2023 at 12:09 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -30,12 +30,32 @@ SET time_zone = "+00:00";
 CREATE TABLE `answer` (
   `id` int NOT NULL,
   `ques_id` int NOT NULL,
-  `ans_text` text NOT NULL,
-  `correct_ans` varchar(255) NOT NULL,
-  `sort_order` text NOT NULL,
-  `start_val` varchar(255) NOT NULL,
-  `stop_val` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `ans_text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `correct_ans` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sort_order` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `start_val` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stop_val` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `answer`
+--
+
+INSERT INTO `answer` (`id`, `ques_id`, `ans_text`, `correct_ans`, `sort_order`, `start_val`, `stop_val`) VALUES
+(1, 1, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam, natus. Neque sit optio earum. Molestias beatae rerum autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, maxime.\n', 'a', '', '', ''),
+(2, 2, 'amet consectetur adipisicing elit. Totam, natus. Neque sit optio earum. Molestias beatae rerum autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, maxime.\r\n', 'a|b|c', '', '', ''),
+(3, 3, 'Do, ipsum dolor sit amet consectetur adipisicing elit. Totam, natus. Neque sit optio earum. Molestias beatae rerum autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, maxime.\r\n', 'd', '', '', ''),
+(4, 4, 'adipisicing elit. Totam, natus. Neque sit optio earum. Molestias beatae rerum autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, Do, ipsum dolor sit amet consectetur maxime.\r\n', 'a|d', '', '', ''),
+(5, 5, 'amet consectetur adipisicing elit. Totam, natus. Neque sit optio earum. Molestias beatae rerum autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, maxime.\r\n', 'd', '', '', ''),
+(6, 6, 'Totam, natus. Neque sit optio earum. Molestias beatae rerum autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, maxime Do, ipsum dolor sit amet consectetur adipisicing elit. .\r\n', 'd', '', '', ''),
+(7, 7, 'Totam, natus. Neque sit optio earum. Molestias beatae rerum autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, maxime amet consectetur adipisicing elit..\r\n', 'b', '', '', ''),
+(8, 8, 'autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, maxime Do, ipsum dolor sit amet consectetur adipisicing elit.Totam, natus. Neque sit optio earum. Molestias beatae rerum .\r\n', 'c', '', '', ''),
+(9, 9, 'amet consectetur adipisicing elit. Totam, natus. Neque sit optio earum. Molestias beatae rerum autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, maxime.\r\n', 'c', '', '', ''),
+(10, 10, 'Do, ipsum dolor sit amet consectetur adipisicing elit. Totam, natus. Neque sit optio earum. Molestias beatae rerum autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, maxime.\r\n', 'a|b|c|d', '', '', ''),
+(11, 11, 'adipisicing elit. Totam, natus. Neque sit optio earum. Molestias beatae rerum autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, Do, ipsum dolor sit amet consectetur maxime.\r\n', 'a|d', '', '', ''),
+(12, 12, 'amet consectetur adipisicing elit. Totam, natus. Neque sit optio earum. Molestias beatae rerum autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, maxime.\r\n', 'd', '', '', ''),
+(13, 13, 'Totam, natus. Neque sit optio earum. Molestias beatae rerum autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, maxime Do, ipsum dolor sit amet consectetur adipisicing elit. .\r\n', 'd', '', '', ''),
+(14, 16, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam, natus. Neque sit optio earum. Molestias beatae rerum autem porro quo. Totam iure velit, laudantium enim repellat nisi ipsam voluptates porro iste ducimus? Adipisci voluptatibus aut nesciunt doloremque quos. Nihil, maxime.', '2.718', '', '1', '3');
 
 -- --------------------------------------------------------
 
@@ -46,24 +66,24 @@ CREATE TABLE `answer` (
 CREATE TABLE `question` (
   `id` int NOT NULL,
   `quiz_id` int NOT NULL,
-  `question_descreption` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `question_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `marks` int NOT NULL,
-  `type_of_que` varchar(255) NOT NULL,
-  `solution` text NOT NULL,
+  `type_of_que` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `solution` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `year` int NOT NULL,
-  `subject` varchar(255) NOT NULL,
-  `chapter` varchar(255) NOT NULL,
-  `option-1` text NOT NULL,
-  `option-2` text NOT NULL,
-  `option-3` text NOT NULL,
-  `option-4` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chapter` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `option-1` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `option-2` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `option-3` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `option-4` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `question`
 --
 
-INSERT INTO `question` (`id`, `quiz_id`, `question_descreption`, `marks`, `type_of_que`, `solution`, `year`, `subject`, `chapter`, `option-1`, `option-2`, `option-3`, `option-4`) VALUES
+INSERT INTO `question` (`id`, `quiz_id`, `question_description`, `marks`, `type_of_que`, `solution`, `year`, `subject`, `chapter`, `option-1`, `option-2`, `option-3`, `option-4`) VALUES
 (1, 1, 'Consider functions Function 1 and Function 2 expressed in pseudocode as follows:\r\n\r\n    Let $f_{1}(n)$ and $f_{2}(n)$ denote the number of times the statement \"\\(x = x + 1\\)\" is executed in\r\n    Function 1 and Function 2, respectively.\r\n    Which of the following statements is/are TRUE?', 4, 'soc', 'a', 2023, 'algorithm', 'algorithm', '$f_{1}(n) \\in \\theta(f_{2}(n))$ ', '$f_{1}(n) \\in o(f_{2}(n))$', '$f_{1}(n) \\in \\omega(f_{2}(n))$', '$f_{1}(n) \\in O(n)$'),
 (2, 1, 'Let $f$ and $g$ be functions of natural numbers given by $f(n) = n$ and $g(n) = n²$.\r\n    Which of the following statements is/are TRUE?', 4, 'mcq', 'a|b|c', 2022, 'algorithm', 'algorithm', '$f(n) \\in O(g)$', '$f(n) \\in \\Omega(g)$', '$f(n) \\in o(g)$', '$f(n) \\in \\theta(g)$'),
 (3, 1, 'Which of the following statements is/are TRUE for all positive functions $f(n)$?', 4, 'soc', 'd', 2022, 'algorithm', 'algorithm', '$f(n²) \\in \\theta(f(n)²)$', '$f(n²) \\in o(f(n)²)$', '$f(n²) \\in O(f(n)²)$', '$f(n²) \\in \\Omega(f(n)²)$'),
@@ -74,9 +94,10 @@ INSERT INTO `question` (`id`, `quiz_id`, `question_descreption`, `marks`, `type_
 (8, 1, 'Match the algorithms with their time complexities:', 4, 'soc', 'c', 2020, 'algorithm', 'algorithm', 'P-(iii), Q-(iv), R-(i), S-(ii)', 'P-(iv), Q-(iii), R-(i), S-(ii)', 'P-(iii), Q-(iv), R-(ii), S-(i)', 'P-(iv), Q-(iii), R-(ii), S-(i)'),
 (9, 1, 'Consider the following functions from positive integers to real numbers: <br>\r\n    10, $ \\sqrt n$, n, $log_{2}n$, $100 \\over n$ <br>\r\n\r\n    The CORRECT arrangement of the above functions in increasing order of asymptotic complexity is:', 4, 'soc', 'c', 2015, 'algorithm', 'algorithm', '$log_{2}n$, $100 \\over n$, 10, $\\sqrt n$, n', '$100 \\over n$, 10, $log_{2}n$, $\\sqrt n$, n', '10, $100 \\over n$, $\\sqrt n$, log₂n, n', '$100 \\over n$, $log_{2}n$, 10, $\\sqrt n$, n'),
 (10, 1, 'In an adjacency list representation of an undirected simple graph G = (V,E), each edge (u,v) has two adjacency \r\n    list entries: |v| in theadjacency list of u, and |u| in the adjacency list of v. These are called twins of each other. \r\n    A twin pointer is a pointer from an adjacency list entry to its twin. If |E|=m and |V|=n, and the memory size is not a \r\n    constraint, what is the Asymptotic Notation of the most\r\n    efficient algorithm to set the twin pointer in each entry in each adjacency list?', 4, 'mcq', 'a|b|c|d', 2015, 'algorithm', 'algorithm', '$\\theta(n^2)$', '$\\theta(n+m)$', '$\\theta(m^2)$', '$\\theta(n^4)$'),
-(13, 2, 'Which of the following is false in the case of a spanning tree of a graph G?', 4, 'mcq', 'a|d', 2014, 'minimum spanning tree', 'minimum spanning tree', 'It is tree that spans G', 'It is a subgraph of the G', 'It includes every vertex of the G', ' It can be either cyclic or acyclic'),
-(14, 2, 'Consider a complete graph G with 4 vertices. The graph G has ____ spanning trees.', 4, 'soc', 'd', 2017, 'minimum spanning tree', 'minimum spanning tree', '15', '8', '16', ' 13'),
-(15, 2, 'The travelling salesman problem can be solved using _________', 4, 'soc', 'd', 2020, 'minimum spanning tree', 'minimum spanning tree', 'A spanning tree', 'A minimum spanning tree', 'Bellman – Ford algorithm', ' DFS traversal');
+(11, 2, 'Which of the following is false in the case of a spanning tree of a graph G?', 4, 'mcq', 'a|d', 2014, 'minimum spanning tree', 'minimum spanning tree', 'It is tree that spans G', 'It is a subgraph of the G', 'It includes every vertex of the G', ' It can be either cyclic or acyclic'),
+(12, 2, 'Consider a complete graph G with 4 vertices. The graph G has ____ spanning trees.', 4, 'soc', 'd', 2017, 'minimum spanning tree', 'minimum spanning tree', '15', '8', '16', ' 13'),
+(13, 2, 'The travelling salesman problem can be solved using _________', 4, 'soc', 'd', 2020, 'minimum spanning tree', 'minimum spanning tree', 'A spanning tree', 'A minimum spanning tree', 'Bellman – Ford algorithm', ' DFS traversal'),
+(16, 1, 'what is the value of e?', 4, 'numeric', '2.718', 2016, 'algorithm', 'algorithm', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -86,8 +107,8 @@ INSERT INTO `question` (`id`, `quiz_id`, `question_descreption`, `marks`, `type_
 
 CREATE TABLE `quiz` (
   `id` int NOT NULL,
-  `name` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `quiz`
@@ -130,13 +151,13 @@ ALTER TABLE `quiz`
 -- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `quiz`
